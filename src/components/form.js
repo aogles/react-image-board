@@ -1,31 +1,38 @@
-function ImageForm({ addImage }) {
-  const [name, setName] = useState("");
+import { useState } from "react";
+//import ImageBoard from "./imageboard";
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+function ImageForm(addImage) {
+  const [url, setUrl] = useState("");
+  const [caption, setCaption] = useState("");
 
-    const todo = {
-      id: nanoid(),
-      name,
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newImage = {
+      url: url, //retrieves value of url
+      caption: caption, //will give you the value of caption
     };
-
-    addImage(image);
-    setName("");
-  };
-
-  const handleInput = (event) => {
-    setName(event.target.value);
+    addImage(newImage);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="mb-3">
-        <label htmlFor="name" className="form-label">
-          Add new Image
-        </label>
-      </div>
-      <button type="submit">save</button>
+    <form>
+      <label htmlFor="url">URL</label>
+      <input
+        type="url"
+        name="url"
+        value={url}
+        onChange={(e) => setUrl(e.target.value)}
+      />
+      <label htmlFor="caption">Caption</label>
+      <input
+        type="text"
+        name="caption"
+        value={caption}
+        onChange={(e) => setCaption(e.target.value)}
+      />
+      <button type="submit">Save Image</button>
     </form>
   );
 }
+
 export default ImageForm;
