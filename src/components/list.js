@@ -1,10 +1,14 @@
+import Card from "react-bootstrap/Card";
+
 //props?
 function ImageList({ images }) {
   const imagesHTML = images.map((image, index) => (
-    <li key={index}>
-      <img src={image.URL} alt={image.caption} />
-      <p>{image.caption}</p>
-    </li>
+    <Card key={index} style={{ width: "18rem" }}>
+      <Card.Img src={image.URL} alt={image.caption} />
+      <Card.Body>
+        <Card.Title>{image.caption}</Card.Title>
+      </Card.Body>
+    </Card>
   ));
 
   return <ul>{imagesHTML}</ul>;

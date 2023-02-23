@@ -8,11 +8,11 @@ const INITIAL_IMAGES = [
   },
   {
     URL: "http://cdn.home-designing.com/wp-content/uploads/2019/04/terracotta-interior.jpg",
-    caption: "Earth tone interioir design",
+    caption: "Earth tone interior design ideas",
   },
   {
     URL: "https://cdn.shopify.com/s/files/1/0049/0301/0402/files/spanishtile_large.jpg?v=1570211907",
-    caption: "desk",
+    caption: "Terracotta sitting room",
   },
 ];
 
