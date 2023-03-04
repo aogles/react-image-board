@@ -1,21 +1,24 @@
 import { useState } from "react";
 //import ImageBoard from "./imageboard";
 
-function ImageForm(addImage) {
+function ImageForm({ setImages, images }) {
   const [url, setUrl] = useState("");
   const [caption, setCaption] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const newImage = {
-      url: url, //retrieves value of url
+      URL: url, //retrieves value of url
       caption: caption, //will give you the value of caption
     };
-    addImage(newImage);
+    setImages([...images, newImage]);
+    // console.log(newImage);
+    setUrl(""); //to empty out value after you have set it to clear it out
+    setCaption("");
   };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label htmlFor="url">URL</label>
       <input
         type="url"

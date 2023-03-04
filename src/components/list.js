@@ -1,6 +1,5 @@
 import Card from "react-bootstrap/Card";
 
-//props?
 function ImageList({ images }) {
   const imagesHTML = images.map((image, index) => (
     <Card key={index} style={{ width: "18rem" }}>

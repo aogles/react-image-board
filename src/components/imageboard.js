@@ -20,7 +20,7 @@ function ImageBoard() {
   const [images, setImages] = useState(INITIAL_IMAGES);
   return (
     <div>
-      <ImageForm />
+      <ImageForm setImages={setImages} images={images} />
       <ImageList images={images} />
     </div>
   );
